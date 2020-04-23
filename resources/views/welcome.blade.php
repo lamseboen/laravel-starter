@@ -38,6 +38,7 @@
             @endforeach
         </tbody>
     </table>
+    {{$students->links()}}
 </div>
 
 <script>
@@ -56,6 +57,9 @@
             })
             .then(data => {
                 console.log(data)
+                if (data === true) {
+                    location.reload()
+                }
             })
     }
 </script>

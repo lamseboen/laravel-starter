@@ -47,10 +47,16 @@
         fetch(url, {
                 method: 'DELETE',
                 headers: {
-                    'token': "{{ csrf_token() }}",
+                    // 'token': "{{ csrf_token() }}",
+                    'X-CSRF-TOKEN': "{{ csrf_token() }}",
                 },
             })
-            .then(res => console.log(res.json()))
+            .then(res => {
+                return res.json()
+            })
+            .then(data => {
+                console.log(data)
+            })
     }
 </script>
 
